@@ -15,8 +15,11 @@ public class HeadRadialMaskMenu : MonoBehaviour
     public RawImage imgCenter;
     public RawImage imgRight;
 
-    [Header("RenderTextures (loop infinito)")]
+    [Header("RenderTextures (UI)")]
     public List<RenderTexture> sections = new List<RenderTexture>();
+
+    [Header("Objetos 3D en escena (mismo orden que sections)")]
+    public List<GameObject> sceneObjects = new List<GameObject>();
 
     [Header("Animación")]
     public float moveDistance = 180f;
@@ -37,22 +40,29 @@ public class HeadRadialMaskMenu : MonoBehaviour
         posRight = slotRight.anchoredPosition;
 
         ActualizarTextures();
+        ActivarObjetoCentral();
         ResetVisual();
     }
 
-    [ContextMenu("Girar Derecha")]
+    // =========================
+    // API
+    // =========================
+
     public void GirarDerecha()
     {
         if (animando || sections.Count < 3) return;
         StartCoroutine(AnimarDerecha());
     }
 
-    [ContextMenu("Girar Izquierda")]
     public void GirarIzquierda()
     {
         if (animando || sections.Count < 3) return;
         StartCoroutine(AnimarIzquierda());
     }
+
+    // =========================
+    // ANIMACIONES
+    // =========================
 
     IEnumerator AnimarDerecha()
     {
@@ -79,6 +89,7 @@ public class HeadRadialMaskMenu : MonoBehaviour
 
         ResetSlots();
         ActualizarTextures();
+        ActivarObjetoCentral();
         ResetVisual();
 
         animando = false;
@@ -109,10 +120,15 @@ public class HeadRadialMaskMenu : MonoBehaviour
 
         ResetSlots();
         ActualizarTextures();
+        ActivarObjetoCentral();
         ResetVisual();
 
         animando = false;
     }
+
+    // =========================
+    // VISUAL UI
+    // =========================
 
     void ActualizarTextures()
     {
@@ -146,6 +162,24 @@ public class HeadRadialMaskMenu : MonoBehaviour
         slotLeft.anchoredPosition = posLeft;
         slotCenter.anchoredPosition = posCenter;
         slotRight.anchoredPosition = posRight;
+    }
+
+    // =========================
+    // OBJETOS 3D
+    // =========================
+
+    void ActivarObjetoCentral()
+    {
+        if (sceneObjects.Count != sections.Count)
+        {
+            Debug.LogWarning("sceneObjects y sections no tienen el mismo tamaño");
+            return;
+        }
+
+        for (int i = 0; i < sceneObjects.Count; i++)
+        {
+            sceneObjects[i].SetActive(i == currentIndex);
+        }
     }
 
     int Mod(int a, int b)
@@ -196,10 +230,6 @@ public class HeadRadialMaskMenu : MonoBehaviour
         ResetVisual();
     }
 
-    // =========================
-    // API PÚBLICA
-    // =========================
-
     [ContextMenu("Girar Derecha")]
     public void GirarDerecha()
     {
@@ -214,18 +244,9 @@ public class HeadRadialMaskMenu : MonoBehaviour
         StartCoroutine(AnimarIzquierda());
     }
 
-    // =========================
-    // ANIMACIONES
-    // =========================
-
     IEnumerator AnimarDerecha()
     {
         animando = true;
-
-        RenderTexture tLeft = imgLeft.texture as RenderTexture;
-        RenderTexture tCenter = imgCenter.texture as RenderTexture;
-        RenderTexture tRight = imgRight.texture as RenderTexture;
-
         float t = 0f;
 
         while (t < 1f)
@@ -256,11 +277,6 @@ public class HeadRadialMaskMenu : MonoBehaviour
     IEnumerator AnimarIzquierda()
     {
         animando = true;
-
-        RenderTexture tLeft = imgLeft.texture as RenderTexture;
-        RenderTexture tCenter = imgCenter.texture as RenderTexture;
-        RenderTexture tRight = imgRight.texture as RenderTexture;
-
         float t = 0f;
 
         while (t < 1f)
@@ -287,10 +303,6 @@ public class HeadRadialMaskMenu : MonoBehaviour
 
         animando = false;
     }
-
-    // =========================
-    // VISUAL
-    // =========================
 
     void ActualizarTextures()
     {
