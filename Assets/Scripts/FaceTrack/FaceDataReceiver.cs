@@ -179,7 +179,7 @@ public class FaceDataReceiver : MonoBehaviour
     {
         if (puntos != null && puntos.Length > 0)
         {
-            Debug.Log($"✅ {puntos.Length} puntos. Distancia ojos: {distanciaOjos:F3}");
+            //Debug.Log($"✅ {puntos.Length} puntos. Distancia ojos: {distanciaOjos:F3}");
         }
     }
 

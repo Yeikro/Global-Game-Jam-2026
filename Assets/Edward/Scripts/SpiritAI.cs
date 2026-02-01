@@ -61,11 +61,17 @@ public class SpiritAI : MonoBehaviour
                 LogicaHuida();
                 break;
             case Estado.Aturdido:
+                LogicaAturdido();
                 break;
         }
     }
 
     // --- COMPORTAMIENTOS ---
+
+    void LogicaAturdido()
+    {
+        agente.ResetPath();
+    }
 
     void LogicaPatrulla()
     {

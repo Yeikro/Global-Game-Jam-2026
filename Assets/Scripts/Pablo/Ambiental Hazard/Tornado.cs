@@ -7,7 +7,6 @@ public class Tornado : MonoBehaviour
 {
     public int damage = 3;
     public float forceMultiplier;
-    public float stunDuration = 2.2f;
     public NavMeshAgent agent;
     public float wanderRadius = 10f;
     public int maxAttempts = 10;
@@ -22,7 +21,7 @@ public class Tornado : MonoBehaviour
         if (other.TryGetComponent(out PlayerLife player))
         {
             Vector3 direction = (other.transform.position - transform.position) * forceMultiplier;
-            player.GetDamage(damage, direction, stunDuration);
+            player.GetDamage(damage, direction);
         }
     }
 
