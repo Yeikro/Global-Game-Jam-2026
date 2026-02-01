@@ -2,17 +2,18 @@
 
 public class ARKitFaceSolver : MonoBehaviour
 {
-    public FaceDataReceiver receiver;
+    //public FaceDataReceiver receiver;
 
     [Header("Calibración")]
     public bool calibrarNeutral;
 
-    float neutralJaw;
-    float neutralMouthWidth;
-    float neutralBrowY;
-    float eyeOpenNeutralL;
-    float eyeOpenNeutralR;
-    float neutralYaw;
+    [HideInInspector] public float neutralJaw;
+    [HideInInspector] public float neutralMouthWidth;
+    [HideInInspector] public float neutralBrowY;
+    [HideInInspector] public float eyeOpenNeutralL;
+    [HideInInspector] public float eyeOpenNeutralR;
+    [HideInInspector] public float neutralYaw;
+
 
     [Header("Coeficientes ARKit (0–1)")]
     public float jawOpen;
@@ -35,8 +36,23 @@ public class ARKitFaceSolver : MonoBehaviour
     Vector3 faceCenter;
     Quaternion faceRotation;
 
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("neutralJaw"))
+        {
+            neutralJaw = PlayerPrefs.GetFloat("neutralJaw");
+            neutralMouthWidth = PlayerPrefs.GetFloat("neutralMouthWidth");
+            neutralBrowY = PlayerPrefs.GetFloat("neutralBrowY");
+            eyeOpenNeutralL = PlayerPrefs.GetFloat("eyeOpenNeutralL");
+            eyeOpenNeutralR = PlayerPrefs.GetFloat("eyeOpenNeutralR");
+            neutralYaw = PlayerPrefs.GetFloat("neutralYaw");
+        }
+    }
+
     void Update()
     {
+        FaceDataReceiver receiver = FaceDataReceiver.instance;
+
         if (receiver == null) return;
 
         var boca = receiver.bocaNormalizada;
@@ -99,13 +115,12 @@ public class ARKitFaceSolver : MonoBehaviour
         // ========= CALIBRACIÓN =========
         if (calibrarNeutral)
         {
-            neutralJaw = jawRaw;
-            neutralMouthWidth = width;
-            neutralBrowY = browRaw;
-            eyeOpenNeutralL = eyeOpenL;
-            eyeOpenNeutralR = eyeOpenR;
-            neutralYaw = yawRaw;
-            calibrarNeutral = false;
+            neutralJaw = Mathf.Lerp(neutralJaw, jawRaw, 0.1f);
+            neutralMouthWidth = Mathf.Lerp(neutralMouthWidth, width, 0.1f);
+            neutralBrowY = Mathf.Lerp(neutralBrowY, browRaw, 0.1f);
+            eyeOpenNeutralL = Mathf.Lerp(eyeOpenNeutralL, eyeOpenL, 0.1f);
+            eyeOpenNeutralR = Mathf.Lerp(eyeOpenNeutralR, eyeOpenR, 0.1f);
+            neutralYaw = Mathf.Lerp(neutralYaw, yawRaw, 0.1f);
         }
     }
 
