@@ -604,6 +604,8 @@ GameObject:
   - component: {fileID: 256742708}
   - component: {fileID: 256742709}
   - component: {fileID: 256742710}
+  - component: {fileID: 256742712}
+  - component: {fileID: 256742711}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -800,14 +802,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba177c6f3aafd443bde9546a5bb9930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabRayo: {fileID: 0}
-  puntoSalida: {fileID: 0}
+  prefabRayo: {fileID: 5929660554759264833, guid: b90e3c8f739e1f34b965e26474d47c28,
+    type: 3}
+  puntoSalida: {fileID: 2018665954}
   capasColision:
     serializedVersion: 2
     m_Bits: 1
   tagObjetivo: Spirit
-  velocidadExtension: 15
-  alcanceMaximo: 20
+  velocidadExtension: 100
+  alcanceMaximo: 15
   velocidadArrastre: 5
   rangoDeCaptura: 2
 --- !u!114 &256742710
@@ -830,6 +833,45 @@ MonoBehaviour:
   tucanText: {fileID: 546934260}
   tapirText: {fileID: 826506937}
   monoText: {fileID: 1040638792}
+--- !u!114 &256742711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256742701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e7b269fdaf06e4aa25550dd47bd744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logicaArma: {fileID: 256742712}
+  accionDisparar:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Accion Disparar
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: e5b8a2b1-45f4-4ba6-8dac-ba8a524c5be1
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 8947360834983865520, guid: b7a144b1d07ac8a4b899ff28d1c120d9,
+      type: 3}
+--- !u!114 &256742712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256742701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486d6b80622e289429f3490c50cf6699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controladorArma: {fileID: 256742709}
 --- !u!1 &271176470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,7 +1365,7 @@ PrefabInstance:
     - target: {fileID: 9108359211078121994, guid: 1074021629272b84bbef64e939abfccf,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4927,7 +4969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 124.983765, y: -83}
+  m_AnchoredPosition: {x: 124.98364, y: -83}
   m_SizeDelta: {x: 249.96594, y: 796.597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1081621526
@@ -5111,7 +5153,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -8508,7 +8550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7823066053773665868
 Transform:
   m_ObjectHideFlags: 0
