@@ -1038,7 +1038,7 @@ MonoBehaviour:
   solver: {fileID: 528587060}
   slider: {fileID: 931818888}
   calibrationTime: 10
-  nextSceneName: Santi3
+  nextSceneName: Pablo3
 --- !u!4 &1288674448
 Transform:
   m_ObjectHideFlags: 0

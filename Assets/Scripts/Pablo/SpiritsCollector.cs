@@ -47,7 +47,7 @@ public class SpiritsCollector : MonoBehaviour
         CheckWinCondition();
         spirit.SetActive(false);
         spirit.transform.parent = this.transform;
-        spirit.transform.localPosition = Vector3.zero;
+        spirit.transform.localPosition = new Vector3(0, 0, -1);
     }
 
     private void RemoveSpirit(SpiritType type)
@@ -83,12 +83,13 @@ public class SpiritsCollector : MonoBehaviour
         spiritToRemove.SetActive(true);
     }
 
-    public void ReleaseRandomSpirit()
+    public void ReleaseRandomSpirit(int count = 1)
     {
         Debug.Log("Releasing a random spirit...");
         int totalSpirits = jaguar.Count + tucan.Count + tapir.Count + mono.Count;
         if (totalSpirits == 0) return;
-        
+
+        int _count = 0;
         bool exit = false;
         while (!exit)
         {
@@ -99,28 +100,36 @@ public class SpiritsCollector : MonoBehaviour
                     if (jaguar.Count > 0)
                     {
                         RemoveSpirit(SpiritType.Jaguar);
-                        exit = true;
+                        _count++;
+                        if (_count >= count)
+                            exit = true;
                     }
                     break;
                 case 1:
                     if (tucan.Count > 0)
                     {
                         RemoveSpirit(SpiritType.Tucan);
-                        exit = true;
+                        _count++;
+                        if (_count >= count)
+                            exit = true;
                     }
                     break;
                 case 2:
                     if (tapir.Count > 0)
                     {
                         RemoveSpirit(SpiritType.Tapir);
-                        exit = true;
+                        _count++;
+                        if (_count >= count)
+                            exit = true;
                     }
                     break;
                 case 3:
                     if (mono.Count > 0)
                     {
                         RemoveSpirit(SpiritType.Mono);
-                        exit = true;
+                        _count++;
+                        if (_count >= count)
+                            exit = true;
                     }
                     break;
             }

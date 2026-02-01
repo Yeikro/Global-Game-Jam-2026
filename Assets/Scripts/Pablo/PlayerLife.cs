@@ -27,7 +27,7 @@ public class PlayerLife : MonoBehaviour
         if (--stunCounter == 0)
         {
             playerController.anim.CambiarACaminar();
-            playerController.GetComponent<SpiritsCollector>().ReleaseRandomSpirit();
+            playerController.GetComponent<SpiritsCollector>().ReleaseRandomSpirit(3);
             yield return new WaitForSeconds(2);
             playerController.blockNormalMovement = false;
         }
