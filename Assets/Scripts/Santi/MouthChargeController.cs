@@ -16,6 +16,7 @@ public class MouthChargeController : MonoBehaviour
     public UnityEvent eventoDisparo;
     public UnityEvent eventoCansado;
     public UnityEvent eventoCargando;
+    public UnityEvent eventoEstuneado;
 
     public float primaryChargeTime = 1.2f;
     public float secondaryChargeTime = 1.0f;
@@ -48,6 +49,9 @@ public class MouthChargeController : MonoBehaviour
         {
             HandleEarlyReset();
         }
+
+        Debug.Log(eventoEstuneado);
+
     }
 
     // =========================
@@ -96,6 +100,7 @@ public class MouthChargeController : MonoBehaviour
                 finalDischarge = true;
 
                 Debug.Log("EVENTO 2: Carga secundaria completa");
+                eventoEstuneado.Invoke();
                 eventoCansado.Invoke();
             }
         }
