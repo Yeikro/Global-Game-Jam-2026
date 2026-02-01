@@ -7,6 +7,8 @@ public class PlayerLife : MonoBehaviour
     public PlayerRBController playerController;
     public float pushForceMultiplier = 5f;
 
+    private int stunCounter = 0;
+
     public void GetDamage(int damage, Vector3 direction, float stunDuration = 1.5f)
     {
         Debug.Log("Player received " + damage + " damage.");
@@ -20,9 +22,14 @@ public class PlayerLife : MonoBehaviour
 
     private IEnumerator ActivateNormalMovement(float stunDuration)
     {
+        stunCounter++;
         yield return new WaitForSeconds(stunDuration);
-        playerController.anim.CambiarACaminar();
-        yield return new WaitForSeconds(2);
-        playerController.blockNormalMovement = false;
+        if (--stunCounter == 0)
+        {
+            playerController.anim.CambiarACaminar();
+            playerController.GetComponent<SpiritsCollector>().ReleaseRandomSpirit();
+            yield return new WaitForSeconds(2);
+            playerController.blockNormalMovement = false;
+        }
     }
 }
