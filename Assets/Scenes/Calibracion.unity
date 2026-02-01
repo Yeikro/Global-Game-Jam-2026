@@ -608,7 +608,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebdb2876ed2c1d48b0522c582bad788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  receiver: {fileID: 1881458678}
   calibrarNeutral: 0
   neutralJaw: 0
   neutralMouthWidth: 0
@@ -1039,7 +1038,7 @@ MonoBehaviour:
   solver: {fileID: 528587060}
   slider: {fileID: 931818888}
   calibrationTime: 10
-  nextSceneName: Santi2
+  nextSceneName: Santi3
 --- !u!4 &1288674448
 Transform:
   m_ObjectHideFlags: 0
@@ -1125,7 +1124,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Para una calibarcion correcta pon el rostro sobre la marca
+  m_Text: "Para una calibraci\xF3n correcta pon el rostro sobre la marca"
 --- !u!222 &1361856623
 CanvasRenderer:
   m_ObjectHideFlags: 0
