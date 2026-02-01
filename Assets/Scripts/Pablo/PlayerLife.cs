@@ -19,6 +19,7 @@ public class PlayerLife : MonoBehaviour
         playerController.blockNormalMovement = true;
         playerController.rb.velocity = Vector3.zero;
         playerController.rb.AddForce(direction * pushForceMultiplier, ForceMode.Force);
+        playerController.anim.CambiarACansado();
         Invoke(nameof(ActivateNormalMovement), stunDuration);
     }
 

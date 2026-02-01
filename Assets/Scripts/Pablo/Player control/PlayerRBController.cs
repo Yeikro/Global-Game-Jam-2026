@@ -17,6 +17,7 @@ public class PlayerRBController : MonoBehaviour
     [Header("Refs")]
     public Camera mainCamera;
     public Rigidbody rb;
+    public AnimaSola anim;
 
     Vector3 targetPos;
 
@@ -36,11 +37,23 @@ public class PlayerRBController : MonoBehaviour
         // calcular velocidad deseada en Update (input)
         Vector2 input = moveAction.action.ReadValue<Vector2>();
         Vector3 dir = new Vector3(input.x, 0, input.y).normalized;
+
+
+
         desiredVel = dir * moveSpeed;
         if (!blockNormalMovement)
+        {
             ApuntarConMouse(); // solo rota (no mueve)
+
+            if (dir.magnitude > 0.1f)
+                anim.CambiarACaminar();
+            else
+                anim.CambiarAIdle();
+        }
         else
+        {
             Caer(); // rota según velocidad actual al caer
+        }
     }
 
     void FixedUpdate()
