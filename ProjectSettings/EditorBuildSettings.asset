@@ -11,6 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Santi2.unity
     guid: e722e6caa3392624cba83a0805d9b9b2
+    path: Assets/Scenes/Menu.unity
+    guid: 74e02d8dc1c95364db9584f6691758fb
+  - enabled: 1
+    path: Assets/Scenes/Pablo2.unity
+    guid: 76641f43d82a6b8469b55fa4ec241f49
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b,
       type: 3}

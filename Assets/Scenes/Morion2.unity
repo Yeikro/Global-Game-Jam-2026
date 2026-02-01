@@ -427,6 +427,7 @@ MonoBehaviour:
   rotationSpeed: 2
   blockNormalMovement: 0
   desiredVel: {x: 0, y: 0, z: 0}
+  direccion: 0
   mainCamera: {fileID: 1108493258}
   rb: {fileID: 256742703}
   anim: {fileID: 452835265}
@@ -755,11 +756,8 @@ MonoBehaviour:
   arkit: {fileID: 889442147}
   mesh: {fileID: 730504762}
   jawOpen: 0
-  mouthSmile_L: 21
-  mouthSmile_R: 22
   eyeBlink_L: 2
   eyeBlink_R: 1
-  browInnerUp: 44
 --- !u!4 &289807247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8709216932701153501, guid: 460babe280fe4aa41adc3fefd46f0c0b,
@@ -2004,12 +2002,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f2b4b71f9671140858d08615780a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotBackLeft: {fileID: 0}
   slotLeft: {fileID: 960257235}
   slotCenter: {fileID: 1459116238}
   slotRight: {fileID: 171362445}
+  slotBackRight: {fileID: 0}
+  imgBackLeft: {fileID: 0}
   imgLeft: {fileID: 328849510}
   imgCenter: {fileID: 1708042619}
   imgRight: {fileID: 622000056}
+  imgBackRight: {fileID: 0}
   sections:
   - {fileID: 8400000, guid: 1a7bfcd0a6e236d46b5300f113eb99c2, type: 2}
   - {fileID: 8400000, guid: 34f3cc14845c09642ba3f46e02717d79, type: 2}
@@ -2618,11 +2620,8 @@ MonoBehaviour:
   arkit: {fileID: 889442147}
   mesh: {fileID: 776533958}
   jawOpen: 0
-  mouthSmile_L: 21
-  mouthSmile_R: 22
   eyeBlink_L: 2
   eyeBlink_R: 1
-  browInnerUp: 44
 --- !u!137 &776533958 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1350764428824208504, guid: b25096c79ae3d674992a9457e78dca09,
@@ -3006,8 +3005,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebdb2876ed2c1d48b0522c582bad788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  receiver: {fileID: 938322863}
   calibrarNeutral: 0
+  neutralJaw: 0
+  neutralMouthWidth: 0
+  neutralBrowY: 0
+  eyeOpenNeutralL: 0
+  eyeOpenNeutralR: 0
+  neutralYaw: 0
   jawOpen: 0
   mouthSmile_L: 0
   mouthSmile_R: 0
@@ -3598,7 +3602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e1a3693820577a4fba9134acb2ba731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 256742707}
+  player: {fileID: 0}
   offset: {x: 0, y: 10, z: -7}
   smoothTime: 0.6
 --- !u!1001 &1148269615
@@ -3690,11 +3694,8 @@ MonoBehaviour:
   arkit: {fileID: 889442147}
   mesh: {fileID: 1173511441}
   jawOpen: 0
-  mouthSmile_L: 21
-  mouthSmile_R: 22
   eyeBlink_L: 2
   eyeBlink_R: 1
-  browInnerUp: 44
 --- !u!137 &1173511441 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5948003296696248899, guid: b25096c79ae3d674992a9457e78dca09,
@@ -3800,11 +3801,8 @@ MonoBehaviour:
   arkit: {fileID: 889442147}
   mesh: {fileID: 1230647458}
   jawOpen: 0
-  mouthSmile_L: 21
-  mouthSmile_R: 22
   eyeBlink_L: 2
   eyeBlink_R: 1
-  browInnerUp: 44
 --- !u!137 &1230647458 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8714008554060145744, guid: b25096c79ae3d674992a9457e78dca09,
@@ -3966,11 +3964,8 @@ MonoBehaviour:
   arkit: {fileID: 889442147}
   mesh: {fileID: 428301045}
   jawOpen: 0
-  mouthSmile_L: 21
-  mouthSmile_R: 22
   eyeBlink_L: 2
   eyeBlink_R: 1
-  browInnerUp: 44
 --- !u!1 &1315066271
 GameObject:
   m_ObjectHideFlags: 0
@@ -4282,7 +4277,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   forceMultiplier: 3
-  stunDuration: 2.2
   agent: {fileID: 1362683370}
   wanderRadius: 10
   maxAttempts: 10
@@ -4490,11 +4484,8 @@ MonoBehaviour:
   arkit: {fileID: 889442147}
   mesh: {fileID: 1474369296}
   jawOpen: 0
-  mouthSmile_L: 21
-  mouthSmile_R: 22
   eyeBlink_L: 2
   eyeBlink_R: 1
-  browInnerUp: 44
 --- !u!137 &1474369296 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7441567619342602438, guid: b25096c79ae3d674992a9457e78dca09,
@@ -5421,11 +5412,8 @@ MonoBehaviour:
   arkit: {fileID: 889442147}
   mesh: {fileID: 2026067975}
   jawOpen: 0
-  mouthSmile_L: 21
-  mouthSmile_R: 22
   eyeBlink_L: 2
   eyeBlink_R: 1
-  browInnerUp: 44
 --- !u!1 &1712213567
 GameObject:
   m_ObjectHideFlags: 0
@@ -5476,11 +5464,8 @@ MonoBehaviour:
   arkit: {fileID: 889442147}
   mesh: {fileID: 2074371659}
   jawOpen: 0
-  mouthSmile_L: 21
-  mouthSmile_R: 22
   eyeBlink_L: 2
   eyeBlink_R: 1
-  browInnerUp: 44
 --- !u!1 &1783187118
 GameObject:
   m_ObjectHideFlags: 0
@@ -6479,6 +6464,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spirit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971110588279863582, guid: 9bdae02d988f155479e20346ef222239,
+        type: 3}
+      propertyPath: m_Speed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971110588279863582, guid: 9bdae02d988f155479e20346ef222239,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

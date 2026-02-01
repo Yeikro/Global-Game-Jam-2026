@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody), typeof(CapsuleCollider))]
 public class PlayerRBController : MonoBehaviour
 {
+    public static PlayerRBController instance;
+
     [Header("Input Actions")]
     public InputActionProperty moveAction;     // Vector2
     public InputActionProperty mousePosAction; // Vector2
@@ -13,6 +15,7 @@ public class PlayerRBController : MonoBehaviour
     public float rotationSpeed = 6f;
     public bool blockNormalMovement;
     public Vector3 desiredVel;
+    public float direccion;
 
     [Header("Refs")]
     public Camera mainCamera;
@@ -23,6 +26,7 @@ public class PlayerRBController : MonoBehaviour
 
     void Awake()
     {
+        instance = this;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
@@ -37,8 +41,9 @@ public class PlayerRBController : MonoBehaviour
         // calcular velocidad deseada en Update (input)
         Vector2 input = moveAction.action.ReadValue<Vector2>();
         Vector3 dir = new Vector3(input.x, 0, input.y).normalized;
-
-
+        direccion = Vector3.Dot(transform.forward, dir);
+        direccion = (direccion + 1) / 2; // normalizar a [0,1]
+        anim.CambiarFrente(direccion);
 
         desiredVel = dir * moveSpeed;
         if (!blockNormalMovement)
@@ -94,11 +99,9 @@ public class PlayerRBController : MonoBehaviour
         {
             Quaternion lookRotation = Quaternion.LookRotation(velocity.normalized);
 
-            Quaternion tiltRotation = lookRotation * Quaternion.Euler(90, 0, 0);
-
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
-                tiltRotation,
+                lookRotation,
                 rotationSpeed * Time.fixedDeltaTime
             );
         }
