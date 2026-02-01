@@ -15,6 +15,13 @@ public class SpiritsCollector : MonoBehaviour
     public Text monoText;
     bool win;
 
+    public static SpiritsCollector instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public void AddSpirit(SpiritType type, GameObject spirit)
     {
         switch (type)
@@ -132,8 +139,8 @@ public class SpiritsCollector : MonoBehaviour
 
 public enum SpiritType
 {
-    Jaguar,
-    Tucan,
-    Tapir,
-    Mono
+    Jaguar = 0,
+    Tucan = 1,
+    Tapir = 2,
+    Mono = 3
 }

@@ -30,11 +30,13 @@ public class HeadRadialMaskMenu : MonoBehaviour
 
     int currentIndex = 0;
     bool animando = false;
+    public static HeadRadialMaskMenu instance;
 
     Vector2 posLeft, posCenter, posRight;
 
     void Start()
     {
+        instance = this;
         posLeft = slotLeft.anchoredPosition;
         posCenter = slotCenter.anchoredPosition;
         posRight = slotRight.anchoredPosition;
@@ -47,6 +49,11 @@ public class HeadRadialMaskMenu : MonoBehaviour
     // =========================
     // API
     // =========================
+
+    public int GetActualIndex()
+    {
+        return currentIndex;
+    }
 
     public void GirarDerecha()
     {
