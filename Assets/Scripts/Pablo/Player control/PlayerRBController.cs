@@ -43,7 +43,7 @@ public class PlayerRBController : MonoBehaviour
         desiredVel = dir * moveSpeed;
         if (!blockNormalMovement)
         {
-            ApuntarConMouse(); // solo rota (no mueve)
+            PointTowardsMouse(); // solo rota (no mueve)
 
             if (dir.magnitude > 0.1f)
                 anim.CambiarACaminar();
@@ -52,7 +52,7 @@ public class PlayerRBController : MonoBehaviour
         }
         else
         {
-            Caer(); // rota según velocidad actual al caer
+            Fall(); // rota según velocidad actual al caer
         }
     }
 
@@ -66,7 +66,7 @@ public class PlayerRBController : MonoBehaviour
         }
     }
 
-    void ApuntarConMouse()
+    void PointTowardsMouse()
     {
         if (!mainCamera) return;
 
@@ -84,7 +84,7 @@ public class PlayerRBController : MonoBehaviour
         // if (ground.Raycast(ray, out float enter)) { ... }
     }
 
-    void Caer()
+    void Fall()
     {
         Vector3 velocity = rb.velocity;
 
@@ -102,5 +102,13 @@ public class PlayerRBController : MonoBehaviour
                 rotationSpeed * Time.fixedDeltaTime
             );
         }
+    }
+
+    public void Tired()
+    {
+        blockNormalMovement = true;
+        rb.velocity = Vector3.zero;
+        anim.CambiarACansado();
+        Debug.Log("Player is tired and cannot move.");
     }
 }

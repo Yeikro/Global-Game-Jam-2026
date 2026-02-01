@@ -7,6 +7,9 @@ public class MouthChargeController : MonoBehaviour
     [Header("Referencia Face Solver")]
     public ARKitFaceSolver faceSolver;
 
+    [Header("Referencia Player")]
+    public PlayerRBController playerController;
+
     [Header("Sliders")]
     public Slider sliderPrimary;
     public Slider sliderSecondary;
@@ -131,6 +134,7 @@ public class MouthChargeController : MonoBehaviour
         if (sliderPrimary.value <= 0f && sliderSecondary.value <= 0f)
         {
             ResetCharge();
+            playerController.blockNormalMovement = false;
         }
     }
 
