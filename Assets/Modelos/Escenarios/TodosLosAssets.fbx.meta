@@ -1,0 +1,449 @@
+fileFormatVersion: 2
+guid: a1a1f02770145674eb7debc1aa490bbd
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barck02
+    second: {fileID: 2100000, guid: 8d7f793de984dd24b9990844009928d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BarckWrangler
+    second: {fileID: 2100000, guid: 4ef0e4f6a4e426c48ad55a931b0f4162, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fruit01
+    second: {fileID: 2100000, guid: 707e62b1363922646a79b25e029911e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fruit02
+    second: {fileID: 2100000, guid: 006b8d8fcdb7fa04ca738f9a5bd1259b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 8e7f6d302ebe8694ca47f5f5cdaf57f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ramas
+    second: {fileID: 2100000, guid: ffee49e4d3f4d6b49b990f184d1f1844, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ramas.02
+    second: {fileID: 2100000, guid: d4fa3d3cade0fc44dae29bf4d3830b97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ramas.03
+    second: {fileID: 2100000, guid: 727dd87494905124785ab5b35121ab0a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ramas.06
+    second: {fileID: 2100000, guid: 277e16a14e2c64d42b75e22a09aaa3c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ramas04
+    second: {fileID: 2100000, guid: a8c5aae3174f20741a0a888f3d9c294b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RamasPalmera
+    second: {fileID: 2100000, guid: 39002cfb7f4bd1946b1e46f0e42534be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RamasPalmera.001
+    second: {fileID: 2100000, guid: e748c79fcb80f8b4d80a6228998792fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RamasPalmera.002
+    second: {fileID: 2100000, guid: e6ffdffcb60e8844b9dc267814eeb45a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tronco03
+    second: {fileID: 2100000, guid: 1ea0bc8e0a715a243905912c3ed2dfa2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TroncoPalmera001
+    second: {fileID: 2100000, guid: 033ce39ff3fe74140ac76b282b330720, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Troncos04
+    second: {fileID: 2100000, guid: 418eaf52d2f9efc4fb749037e1b81300, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coast_land_rocks_01
+    second: {fileID: 2100000, guid: 1edc5dc67f22957458ea1c6fd967cd36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lichen_rock
+    second: {fileID: 2100000, guid: 3091a63dabe3ede45883cb82aecf6bf8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mossy_rock
+    second: {fileID: 2100000, guid: 69e48b89bbbdbe546a175a17d03df7b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock_face_03
+    second: {fileID: 2100000, guid: 4acf5821cfd09f24bb6862b2df4df213, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock_pitted_mossy
+    second: {fileID: 2100000, guid: 2d97595d8c33c014bb1b6f9e3eca9951, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: worn_rock_natural_01
+    second: {fileID: 2100000, guid: f081309f2c1f07b48bc5d7eec94446bd, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bark009_1K-PNG_Color
+    second: {fileID: 2800000, guid: 40767a98ebcdaaf49b9866d2443ec61c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bark009_1K-PNG_NormalGL
+    second: {fileID: 2800000, guid: 950030d689cf2e648b8edb609e928596, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bark009_1K-PNG_Roughness
+    second: {fileID: 2800000, guid: daf5454332540414781bfe3ad14ffbd4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rama1
+    second: {fileID: 2800000, guid: 52274ab317597054a8851c3f7342f858, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rama2
+    second: {fileID: 2800000, guid: e8a091a6d61fafc43bdafabaf1b6b1a7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rama5
+    second: {fileID: 2800000, guid: 20ddc6385f994054991a1aa0229dab07, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rama6
+    second: {fileID: 2800000, guid: 0bf401cb630427141a2a6b487157efd1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rama7
+    second: {fileID: 2800000, guid: a7d670a937af5d24aaa1a7ff22ce7f5c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bark_brown_01_diff_1k
+    second: {fileID: 2800000, guid: fabb37b13aca42a458b6860ff12b1a5c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bark_brown_01_rough_1k
+    second: {fileID: 2800000, guid: a9d59d5c76539a8408acd3dfa45ab168, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bark_willow_diff_1k
+    second: {fileID: 2800000, guid: b764a8942372c58488920424b07dbc57, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bark_willow_nor_gl_1k
+    second: {fileID: 2800000, guid: 75162018c763bbe42b62f4a6af9a0e31, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bark_willow_rough_1k
+    second: {fileID: 2800000, guid: def99cc0323f40449814b8e2a4811658, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: coast_land_rocks_01_diff_1k
+    second: {fileID: 2800000, guid: 1c43220324880344fac90e3e3579550f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: coast_land_rocks_01_nor_gl_1k
+    second: {fileID: 2800000, guid: a2efdf3ce950f9c49b4e63ebdd97d99d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: coast_land_rocks_01_rough_1k
+    second: {fileID: 2800000, guid: feac1d8beb6cc0d409bcae75c21bb05b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: food_0003_color_1k
+    second: {fileID: 2800000, guid: da8cff667024e92448337b7059ae6b1b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: food_0003_normal_opengl_1k
+    second: {fileID: 2800000, guid: 0c34b4e091caa2247bba1bf3d7f7fdca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: food_0003_roughness_1k
+    second: {fileID: 2800000, guid: 8b3db6cdf227965469e882b0565864ab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: food_0022_color_1k
+    second: {fileID: 2800000, guid: 8b9652042fc92234baa6583508a281e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: food_0022_normal_direct_1k
+    second: {fileID: 2800000, guid: 39d491f6f05f9b24c8e842b941c5ecae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: food_0022_roughness_1k
+    second: {fileID: 2800000, guid: f6c930620bb37304a9a90df077f8f741, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: japanese_hackberry_bark_diff_1k
+    second: {fileID: 2800000, guid: a322ec20bbbdd664ba29e0cafb7782ce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: japanese_hackberry_bark_nor_gl_1k
+    second: {fileID: 2800000, guid: 8f2ec20ceeab61e4ca09f7c86f703fb3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: japanese_hackberry_bark_rough_1k
+    second: {fileID: 2800000, guid: 2d42e7a7e66cdc04b9caa8faac590e46, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: lichen_rock_diff_1k
+    second: {fileID: 2800000, guid: c08027cfef68c144cbe548e3a7c44918, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: lichen_rock_nor_gl_1k
+    second: {fileID: 2800000, guid: ccbd99ea243ee804c8aca6d205dfc67b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: lichen_rock_rough_1k
+    second: {fileID: 2800000, guid: 8f86816663e266a4c9b0c04a19c76da6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: mossy_rock_diff_1k
+    second: {fileID: 2800000, guid: 2e20c80b02716214f93b43b1a7695fc9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: mossy_rock_nor_gl_1k
+    second: {fileID: 2800000, guid: 63f852920106ebe40ac6f748a5dd5376, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: mossy_rock_rough_1k
+    second: {fileID: 2800000, guid: 6f52f308df7717a40a5fd61cbedd4351, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: natural-fungi-ecosystem-on-decaying-log-isolated-png
+    second: {fileID: 2800000, guid: c4211e5e9b1acd64ba7e915040b8a3ee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: palm_tree_bark_diff_1k
+    second: {fileID: 2800000, guid: 0fed8ec934881a140b0b468e18ef73a0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: palm_tree_bark_nor_gl_1k
+    second: {fileID: 2800000, guid: 160f5ca2658f4ac4c9af5530052ffd11, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: palm_tree_bark_rough_1k
+    second: {fileID: 2800000, guid: a8d9dcf24ce917f4f948f3e521e69cb2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pngtree-palm-branch-coconut-leaf-png-image_14514291
+    second: {fileID: 2800000, guid: 83c8485b59038db4d86dc4ea23057b82, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pngtree-tea-leaf-png-png-image_10117348
+    second: {fileID: 2800000, guid: ffa703af214c448419421e795f9ac6a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rock_face_03_diff_1k
+    second: {fileID: 2800000, guid: e47177d590cec37469683bae9ca52bb0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rock_face_03_nor_gl_1k
+    second: {fileID: 2800000, guid: 1de50f25831e450499b921d1b96743ac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rock_face_03_rough_1k
+    second: {fileID: 2800000, guid: 9e98aef311c86974a90be688f0b3af82, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rock_pitted_mossy_diff_1k
+    second: {fileID: 2800000, guid: b7da5671de0d66d4a878aaaa8fa5784c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rock_pitted_mossy_nor_gl_1k
+    second: {fileID: 2800000, guid: eb8e651ee2ea99d4cb6bce4b49f54780, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rock_pitted_mossy_rough_1k
+    second: {fileID: 2800000, guid: 813193355cb3d954fbf607822af57d27, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: worn_rock_natural_01_diff_1k
+    second: {fileID: 2800000, guid: fcd5fad10587cfc4aa452ca5f3cbf406, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: worn_rock_natural_01_nor_gl_1k
+    second: {fileID: 2800000, guid: 8bc85bc6c502e5e47aff768e2f672e7b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: worn_rock_natural_01_rough_1k
+    second: {fileID: 2800000, guid: 577d8a31fb184a84ebc701befddfd228, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

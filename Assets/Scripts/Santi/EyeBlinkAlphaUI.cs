@@ -14,9 +14,9 @@ public class EyeBlinkAlphaUI : MonoBehaviour
     [Range(0f, 1f)] public float blinkThreshold = 0.7f;
     [Range(0.05f, 0.3f)] public float alphaStep = 0.15f;
 
-    [Header("Espíritu / Visión")]
-    public SpiritAI spiritAI;
+    [Header("Espíritus / Visión")]
     public Transform player;
+    public SpiritAI[] spirits;   // 👈 VARIOS SPIRIT AI
 
     [Tooltip("Tiempo mínimo para cegarte")]
     public float minBlindTime = 1.2f;
@@ -33,6 +33,10 @@ public class EyeBlinkAlphaUI : MonoBehaviour
 
     void Start()
     {
+        // Si no los asignas a mano, los busca solos
+        if (spirits == null || spirits.Length == 0)
+            spirits = FindObjectsOfType<SpiritAI>();
+
         RollBlindTime();
     }
 
@@ -55,33 +59,40 @@ public class EyeBlinkAlphaUI : MonoBehaviour
 
         bool isBlinking = blinkValue >= blinkThreshold;
 
-        // Detectar inicio del parpadeo
         if (isBlinking && !wasBlinking)
         {
             Color c = img.color;
             c.a = Mathf.Clamp01(c.a - alphaStep);
             img.color = c;
-
-            Debug.Log($"{img.name} parpadeo → alpha {c.a}");
         }
 
         wasBlinking = isBlinking;
     }
 
     // =========================
-    // ESPÍRITU TE VE → ALPHA = 1
+    // CUALQUIER ESPÍRITU TE VE
     // =========================
     void HandleSpiritVision()
     {
-        if (spiritAI == null || player == null) return;
+        if (player == null || spirits == null) return;
 
-        float dist = Vector3.Distance(player.position, spiritAI.transform.position);
+        bool insideAnyVision = false;
 
-        bool insideVision =
-            dist <= spiritAI.radioVision ||
-            spiritAI.estadoActual == SpiritAI.Estado.Huida;
+        foreach (SpiritAI spirit in spirits)
+        {
+            if (spirit == null) continue;
 
-        if (!insideVision)
+            float dist = Vector3.Distance(player.position, spirit.transform.position);
+
+            if (dist <= spirit.radioVision ||
+                spirit.estadoActual == SpiritAI.Estado.Huida)
+            {
+                insideAnyVision = true;
+                break; // 👈 con uno basta
+            }
+        }
+
+        if (!insideAnyVision)
         {
             blindTimer = 0f;
             visionTaken = false;
@@ -96,7 +107,7 @@ public class EyeBlinkAlphaUI : MonoBehaviour
             BlindInstant();
             visionTaken = true;
 
-            Debug.Log("El espíritu te quitó la visión");
+            Debug.Log("Un espíritu te quitó la visión");
         }
     }
 

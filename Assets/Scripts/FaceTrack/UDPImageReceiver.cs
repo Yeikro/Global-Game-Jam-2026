@@ -6,6 +6,8 @@ using System.Threading;
 
 public class UDPImageReceiver : MonoBehaviour
 {
+    public static UDPImageReceiver instance2;
+
     public RawImage rawImage;
     public int port = 5053;
 
@@ -16,6 +18,19 @@ public class UDPImageReceiver : MonoBehaviour
     bool hasNewFrame = false;
 
     Texture2D tex;
+
+    public void Awake()
+    {
+        if (instance2 == null)
+        {
+            instance2 = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            DestroyImmediate(this);
+        }
+    }
 
     void Start()
     {
