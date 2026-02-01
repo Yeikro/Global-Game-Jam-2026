@@ -10,7 +10,7 @@ public class EspirituDelMal : MonoBehaviour
     {
         if ((int)tipo == HeadRadialMaskMenu.instance.GetActualIndex())
         {
-            SpiritsCollector.instance.AddSpirit((SpiritType)tipo, new GameObject(tipo.ToString()));
+            SpiritsCollector.instance.AddSpirit((SpiritType)tipo, this.gameObject);
         }
     }
 }

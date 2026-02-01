@@ -47,6 +47,7 @@ public class SpiritsCollector : MonoBehaviour
         CheckWinCondition();
         spirit.SetActive(false);
         spirit.transform.parent = this.transform;
+        spirit.transform.localPosition = Vector3.zero;
     }
 
     private void RemoveSpirit(SpiritType type)

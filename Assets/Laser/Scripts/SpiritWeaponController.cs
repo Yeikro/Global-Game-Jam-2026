@@ -130,11 +130,13 @@ public class SpiritWeaponController : MonoBehaviour
 
     void IniciarCaptura(GameObject enemigo, Vector3 puntoImpacto)
     {
-        _estaArrastrando = true;
-        _objetoCapturado = enemigo;
-        _anclaArrastre = new GameObject("Ancla_Captura_Temp");
-        _anclaArrastre.transform.position = puntoImpacto;
-        _objetoCapturado.transform.SetParent(_anclaArrastre.transform);
+        //_estaArrastrando = true;
+        //_objetoCapturado = enemigo;
+        //_anclaArrastre = new GameObject("Ancla_Captura_Temp");
+        //_anclaArrastre.transform.position = puntoImpacto;
+        //_objetoCapturado.transform.SetParent(_anclaArrastre.transform);
+        EspirituDelMal espirituDelMal = enemigo.GetComponent<EspirituDelMal>();
+        espirituDelMal.VerificarCaptura();
     }
 
     void ProcesarArrastre()

@@ -80,12 +80,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6684295394808222897, guid: cf7267c6f17919c4b850105b10150761,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684295394808222897, guid: cf7267c6f17919c4b850105b10150761,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e5017ffba5e2f504db32cc5b4f8586e8, type: 2}
     - target: {fileID: 8003028576119023140, guid: cf7267c6f17919c4b850105b10150761,
         type: 3}
       propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8003028576119023140, guid: cf7267c6f17919c4b850105b10150761,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8003028576119023140, guid: cf7267c6f17919c4b850105b10150761,
