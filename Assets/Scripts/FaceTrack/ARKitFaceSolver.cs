@@ -2,16 +2,18 @@
 
 public class ARKitFaceSolver : MonoBehaviour
 {
-    public FaceDataReceiver receiver;
+    //public FaceDataReceiver receiver;
 
     [Header("Calibración")]
     public bool calibrarNeutral;
 
-    float neutralJaw;
-    float neutralMouthWidth;
-    float neutralBrowY;
-    float eyeOpenNeutralL;
-    float eyeOpenNeutralR;
+    [HideInInspector] public float neutralJaw;
+    [HideInInspector] public float neutralMouthWidth;
+    [HideInInspector] public float neutralBrowY;
+    [HideInInspector] public float eyeOpenNeutralL;
+    [HideInInspector] public float eyeOpenNeutralR;
+    [HideInInspector] public float neutralYaw;
+
 
     [Header("Coeficientes ARKit (0–1)")]
     public float jawOpen;
@@ -20,6 +22,10 @@ public class ARKitFaceSolver : MonoBehaviour
     public float browInnerUp;
     public float eyeBlink_L;
     public float eyeBlink_R;
+
+    [Header("Rotación cabeza")]
+    [Range(-1f, 1f)] public float headYaw;
+    [Range(0.01f, 1f)] public float smoothYaw = 0.12f;
 
     [Header("Suavizado")]
     [Range(0.01f, 1f)] public float smoothJaw = 0.15f;
@@ -30,8 +36,23 @@ public class ARKitFaceSolver : MonoBehaviour
     Vector3 faceCenter;
     Quaternion faceRotation;
 
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("neutralJaw"))
+        {
+            neutralJaw = PlayerPrefs.GetFloat("neutralJaw");
+            neutralMouthWidth = PlayerPrefs.GetFloat("neutralMouthWidth");
+            neutralBrowY = PlayerPrefs.GetFloat("neutralBrowY");
+            eyeOpenNeutralL = PlayerPrefs.GetFloat("eyeOpenNeutralL");
+            eyeOpenNeutralR = PlayerPrefs.GetFloat("eyeOpenNeutralR");
+            neutralYaw = PlayerPrefs.GetFloat("neutralYaw");
+        }
+    }
+
     void Update()
     {
+        FaceDataReceiver receiver = FaceDataReceiver.instance;
+
         if (receiver == null) return;
 
         var boca = receiver.bocaNormalizada;
@@ -45,7 +66,17 @@ public class ARKitFaceSolver : MonoBehaviour
 
         ConstruirEspacioFacial(ojoL, ojoR);
 
-        // ========= JAW OPEN =========
+        // ========= YAW (HEAD TURN) =========
+        Vector3 centroL = Promedio(ojoL);
+        Vector3 centroR = Promedio(ojoR);
+
+        Vector3 dir = (centroR - centroL).normalized;
+        float yawRaw = dir.z; // positivo = gira derecha
+
+        float yawTarget = Mathf.Clamp(yawRaw - neutralYaw, -1f, 1f);
+        headYaw = Mathf.Lerp(headYaw, yawTarget, smoothYaw);
+
+        // ========= JAW =========
         float jawRaw = Mathf.Abs(Local(boca[3]).y - Local(boca[2]).y);
         float jawTarget = Mathf.Clamp01((jawRaw - neutralJaw) / 0.025f);
         jawOpen = Mathf.Lerp(jawOpen, jawTarget, smoothJaw);
@@ -60,18 +91,14 @@ public class ARKitFaceSolver : MonoBehaviour
         float eyeOpenL = EyeOpenLocal(ojoL);
         float eyeOpenR = EyeOpenLocal(ojoR);
 
-        // Diferencia relativa respecto al neutral
         float blinkTargetL =
             (eyeOpenNeutralL - eyeOpenL) / (eyeOpenNeutralL * 0.7f);
-
         float blinkTargetR =
             (eyeOpenNeutralR - eyeOpenR) / (eyeOpenNeutralR * 0.7f);
 
-        // Dead zone (evita ruido)
         blinkTargetL = Mathf.Clamp01(blinkTargetL - 0.05f);
         blinkTargetR = Mathf.Clamp01(blinkTargetR - 0.05f);
 
-        // Suavizado
         eyeBlink_L = Mathf.Lerp(eyeBlink_L, blinkTargetL, smoothBlink);
         eyeBlink_R = Mathf.Lerp(eyeBlink_R, blinkTargetR, smoothBlink);
 
@@ -88,12 +115,12 @@ public class ARKitFaceSolver : MonoBehaviour
         // ========= CALIBRACIÓN =========
         if (calibrarNeutral)
         {
-            neutralJaw = jawRaw;
-            neutralMouthWidth = width;
-            neutralBrowY = browRaw;
-            eyeOpenNeutralL = eyeOpenL;
-            eyeOpenNeutralR = eyeOpenR;
-            calibrarNeutral = false;
+            neutralJaw = Mathf.Lerp(neutralJaw, jawRaw, 0.1f);
+            neutralMouthWidth = Mathf.Lerp(neutralMouthWidth, width, 0.1f);
+            neutralBrowY = Mathf.Lerp(neutralBrowY, browRaw, 0.1f);
+            eyeOpenNeutralL = Mathf.Lerp(eyeOpenNeutralL, eyeOpenL, 0.1f);
+            eyeOpenNeutralR = Mathf.Lerp(eyeOpenNeutralR, eyeOpenR, 0.1f);
+            neutralYaw = Mathf.Lerp(neutralYaw, yawRaw, 0.1f);
         }
     }
 
@@ -133,7 +160,6 @@ public class ARKitFaceSolver : MonoBehaviour
         float h = Mathf.Abs(right - left);
 
         if (h < 0.0001f) return 0f;
-
         return v / h;
     }
 
@@ -142,6 +168,11 @@ public class ARKitFaceSolver : MonoBehaviour
         Vector3 sum = Vector3.zero;
         foreach (var p in pts) sum += p;
         return sum / pts.Length;
+    }
+
+    public void Calibrar()
+    {
+        calibrarNeutral = true;
     }
 }
 

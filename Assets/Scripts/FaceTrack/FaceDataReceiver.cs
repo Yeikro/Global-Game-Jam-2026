@@ -81,6 +81,21 @@ public class FaceDataReceiver : MonoBehaviour
 
     public float distanciaOjos = 1f; // para debug
 
+    public static FaceDataReceiver instance;
+
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            DestroyImmediate(this);
+        }
+    }
+
     private void Start()
     {
         receiveThread = new Thread(new ThreadStart(ReceiveData));
@@ -179,7 +194,7 @@ public class FaceDataReceiver : MonoBehaviour
     {
         if (puntos != null && puntos.Length > 0)
         {
-            Debug.Log($"✅ {puntos.Length} puntos. Distancia ojos: {distanciaOjos:F3}");
+            //Debug.Log($"✅ {puntos.Length} puntos. Distancia ojos: {distanciaOjos:F3}");
         }
     }
 

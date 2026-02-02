@@ -6,6 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  m_configObjects: {}
+    path: Assets/Scenes/Menu.unity
+    guid: 74e02d8dc1c95364db9584f6691758fb
+  - enabled: 1
+    path: Assets/Scenes/VideoInicio.unity
+    guid: e020bb22e5dc2404ca27ab329f9e446a
+  - enabled: 1
+    path: Assets/Scenes/Calibracion.unity
+    guid: abf0f34365a929f4384c1581dee6216e
+  - enabled: 1
+    path: Assets/Scenes/Morion4.unity
+    guid: 565785260b8aa454f9cf15d3d3da00a1
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b,
+      type: 3}
